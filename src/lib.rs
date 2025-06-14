@@ -20,8 +20,14 @@ impl plugin::Plugin for Plugin {
 
     fn get_ui_tree() -> plugin::UiTree {
         rows![
-            text_input![placeholder: "Email".to_string()],
-            button![label: "Submit".to_string()]
+            text_input![
+                id: "email".to_string(),
+                placeholder: "Email".to_string()
+            ],
+            button![
+                label: "Submit".to_string(),
+                on_click_event: "submit-email".to_string()
+            ]
         ]
     }
 }

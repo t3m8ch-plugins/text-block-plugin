@@ -36,6 +36,20 @@ macro_rules! text_input {
             }
         }
     };
+
+    [id: $id:expr, placeholder: $placeholder:expr] => {
+        {
+            let id: String = $id;
+            let placeholder: String = $placeholder;
+            plugin::UiNode {
+                name: "text-input".to_string(),
+                props: vec![
+                    ("id".to_string(), id),
+                    ("placeholder".to_string(), placeholder),
+                ],
+            }
+        }
+    };
 }
 
 macro_rules! button {
@@ -48,6 +62,19 @@ macro_rules! button {
             }
         }
     };
+
+    [label: $label:expr, on_click_event: $on_click_event:expr] => {
+        {
+            let label: String = $label;
+            plugin::UiNode {
+                name: "button".to_string(),
+                props: vec![
+                    ("label".to_string(), label),
+                    ("onClickEvent".to_string(), $on_click_event.to_string()),
+                ],
+            }
+        }
+    }
 }
 
 pub(crate) use button;
