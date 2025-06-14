@@ -1,5 +1,8 @@
 wai_bindgen_rust::export!("./wai/plugin.wai");
 
+mod sdk;
+use sdk::{button, rows, text_input};
+
 struct Plugin;
 
 impl plugin::Plugin for Plugin {
@@ -16,22 +19,9 @@ impl plugin::Plugin for Plugin {
     }
 
     fn get_ui_tree() -> plugin::UiTree {
-        plugin::UiTree {
-            nodes: vec![
-                plugin::UiNode {
-                    name: "rows".to_string(),
-                    props: vec![],
-                },
-                plugin::UiNode {
-                    name: "text-input".to_string(),
-                    props: vec![("placeholder".to_string(), "Email".to_string())],
-                },
-                plugin::UiNode {
-                    name: "button".to_string(),
-                    props: vec![("label".to_string(), "Submit".to_string())],
-                },
-            ],
-            children: vec![vec![1, 2], vec![], vec![]],
-        }
+        rows![
+            text_input![placeholder: "Email".to_string()],
+            button![label: "Submit".to_string()]
+        ]
     }
 }
