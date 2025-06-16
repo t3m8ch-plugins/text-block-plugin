@@ -1,7 +1,5 @@
-wai_bindgen_rust::export!("./wai/plugin.wai");
-
-mod sdk;
-use sdk::{button, rows, text_input};
+include_wai!();
+use plugin_sdk::*;
 
 struct Plugin;
 
