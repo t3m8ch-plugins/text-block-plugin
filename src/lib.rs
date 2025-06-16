@@ -1,4 +1,4 @@
-include_wai!();
+export_wai!();
 use plugin_sdk::*;
 
 struct Plugin;

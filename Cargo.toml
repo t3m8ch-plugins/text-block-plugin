@@ -8,7 +8,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wai-bindgen-rust = "0.2.3"
-plugin-sdk = { git = "https://github.com/t3m8ch-plugins/plugin-sdk.git", rev = "6f1808a" }
+plugin-sdk = { git = "https://github.com/t3m8ch-plugins/plugin-sdk.git", rev = "880eaeacc" }
 
 [build-dependencies]
-plugin-sdk = { git = "https://github.com/t3m8ch-plugins/plugin-sdk.git", rev = "6f1808a" }
+plugin-sdk = { git = "https://github.com/t3m8ch-plugins/plugin-sdk.git", rev = "880eaeacc" }
